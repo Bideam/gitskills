@@ -1,0 +1,85 @@
+创建版本库
+step1 创建空库{
+$ mkdir learngit
+$ cd learngit
+$ pwd
+}
+step2 初始化空库{
+$ git init
+}
+
+$ git add filename //把文件添加到仓库
+$ git commit -m "exegesis"  //把文件提交到仓库
+
+$ git status //查看库当前状态
+
+$ git diff filename //查看文件更改内容
+$ git diff HEAD -- filename  //查看工作区中的文件和库中的文件的不同
+
+
+$ git log //查看历史记录
+$ git log --pretty=oneline //获得最近提交的文件的ID号
+
+$ git reset --hard HEAD^ //退回到上一个版本有几个^就退回几次
+$ git reset --hard ID //退回到任意ID号版本
+
+$ git cat filename //读取文本内容
+
+$ git reflog  //显示记录的每一次命令
+
+$ git checkout -- filename //撤销工作区文件的更改
+$ git checkout HEAD filename //撤销已经add但未commit的文件的更改
+
+
+$ git rm filename  //删除文件
+
+$ ssh-keygen -t rsa -C "youremail@example.com" //创建SSH Key
+
+$ git remote add origin https://github,com/Bideam/repositoryName.git  //远程连接github上的库
+
+$ git push -u origin master //将本地库中的内容推送到远程库中“-u”只在第一次时
+
+$ git clone  https://github,com/Bideam/repositoryName.git  //冲远程库中下载库
+
+$ git ls //显示本地库中的文件
+
+$ git checkout -b branchname //创建+切换分支
+$ git branch branchname //创建分支
+$ git branch //查看分支
+$ git branch branchname //更改分支
+$ git git merge branchname //合并某分支到当前分支
+$ git branch -d branchname //删除分支
+$ git branch -D branchname //强行删除分支
+
+$ git stash  //储存当前工作区
+$ git stash list  //查看储存的工作区
+$ git stash apply //恢复工作区
+$ git stash drop  //从储存区删除工作区
+$ git stash pop  //恢复工作区然后从储存区删除工作区
+$ git stash apply stash@{0} //恢复list中指定的工作区
+
+$ git remote //查看远程库的信息
+$ git remote -v  //显示详细远程库的信息
+
+
+推送分支
+$ git push origin master
+$ git push origin dev
+抓取分支
+$ git clone https://github.com/michaelliao/learngit.git
+
+$ git checkout -b dev origin/dev  //创建远程origin的dev分⽀支到本地
+
+$ git pull //把最新的提交从origin/dev抓下来，
+$ git branch --set-upstream dev origin/dev  //设置本地Dev与远程origin/dev链接
+
+
+$ git tag label //给分支打标签
+$ git tag  //查看所有的标签
+$ git tag label ID //给历史提交的commit ID打标签
+$ git show label //显示标签信息
+$ git git tag -d label  //删除标签
+$ git push origin label //推送标签到远程
+$ git push origin --tag  //一次性推送全部尚未推送到远程的标签
+$ git push origin :refs/tags/label  //删除远程标签
+
